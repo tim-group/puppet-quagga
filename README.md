@@ -5,6 +5,8 @@ https://github.com/kernel23/puppet-quagga/
 
 A puppet module for Quagga daemon running on Debian (best OS ever). Main goal (and difference with others modules) is to cover ALL available options within Class to avoid static templates. Work in progress (mostly done for BGP), contributions welcome.
 
+If you are looking for automation related to BGP, you might be also interested in another personal project called "json-schema-quagga-bgpd". Please check : https://github.com/kernel23/json-schema-quagga-bgpd 
+
 ## Example for BGP configuration
 
 In Puppet / Ruby syntax :
@@ -82,6 +84,6 @@ In JSON / Hiera syntax :
 	"bgp2": {
 		"neighbor_ip": "10.0.0.3",
 		"neighbor_as": "65003",
-		"description": "AS-002",
+		"description": "AS-003",
 		"next_hop_self": true
 	}
