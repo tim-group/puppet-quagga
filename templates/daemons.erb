@@ -1,0 +1,44 @@
+##############################################################################
+# This file is mananged by puppet.                                           #
+##############################################################################
+
+<% if @zebra %>
+zebra=yes
+<% else %>
+zebra=no
+<% end  %>
+<% if @bgpd %>
+bgpd=yes
+<% else %>
+bgpd=no
+<% end  %>
+<% if @ospfd %>
+ospfd=yes
+<% else %>
+ospfd=no
+<% end  %>
+<% if @ospf6d %>
+ospf6d=yes
+<% else %>
+ospf6d=no
+<% end  %>
+<% if @ripd %>
+ripd=yes
+<% else %>
+ripd=no
+<% end  %>
+<% if @ripngd %>
+ripngd=yes
+<% else %>
+ripngd=no
+<% end  %>
+<% if @isisd %>
+isisd=yes
+<% else %>
+isisd=no
+<% end  %>
+<% if @babeld %>
+babeld=yes
+<% else %>
+babeld=no
+<% end  %>
