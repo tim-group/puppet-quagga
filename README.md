@@ -3,7 +3,11 @@ puppet-quagga
 
 https://github.com/kernel23/puppet-quagga/
 
-## Example for BGP (Work in progress)
+A puppet module for Quagga daemon running on Debian (best OS ever). Main goal (and difference with others modules) is to cover ALL available options within Class to avoid static templates. Work in progress (mostly done for BGP), contributions welcome.
+
+## Example for BGP configuration
+
+In Puppet / Ruby syntax :
 
 	class {'quagga':
 		asn=> "65001",
@@ -54,3 +58,30 @@ https://github.com/kernel23/puppet-quagga/
 		},
 	}
 
+In JSON / Hiera syntax :
+
+	"quagga::bgpd": true,
+ 	"quagga::zebra": true,
+ 	"quagga::asn": "65001",
+ 	"quagga::hostname": "host.bgp.me",
+ 	"quagga::password": "password",
+ 	"quagga::enable": "strong_password",
+ 	"quagga::network": [
+   	"192.168.1.0/25",
+   	"192.168.128.0/25",
+ 	],
+	"quagga::router_id": "10.0.0.1",
+	"quagga::bgp_neighbors": {
+	"bgp1": {
+		"neighbor_ip": "10.0.0.2",
+		"neighbor_as": "65002",
+		"description": "AS-002",
+		"route_map_in": "med_100",
+		"route_map_out": "med_100"
+	},
+	"bgp2": {
+		"neighbor_ip": "10.0.0.3",
+		"neighbor_as": "65003",
+		"description": "AS-002",
+		"next_hop_self": true
+	}
