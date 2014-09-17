@@ -1,0 +1,51 @@
+{
+  "name": "kernel23-quagga",
+  "version": "0.1.0",
+  "source": "https://github.com/kernel23/puppet-quagga",
+  "author": "kernel23",
+  "license": "Apache License, Version 2.0",
+  "summary": "quagga configuration",
+  "description": "a module to automatically configure quagga",
+  "project_page": "https://github.com/kernel23?tab=repositories",
+  "issues_url": "https://github.com/kernel23/puppet-quagga/issues",
+   "operatingsystem_support": [
+    {
+      "operatingsystem": "Debian",
+      "operatingsystemrelease": [
+        "7"
+      ]
+    }
+  ],
+  "dependencies": [
+
+  ],
+  "types": [
+
+  ],
+  "checksums": {
+    "LICENSE": "136e4f49dbf29942c572a3a8f6e88a77",
+    "Modulefile": "0978697b58b7cde84e805e6614a45b93",
+    "README.md": "5c715e67af3b17b0ed4ccb400d07407d",
+    "manifests/bgpd.pp": "473197dd37b27768d7e717f4b65c00b6",
+    "manifests/init.pp": "53cf11bbd07559023a9b92778cf9c455",
+    "manifests/isisd.pp": "a9e2d55b8e24ad1a31dfffa8848491b5",
+    "manifests/ospf6d.pp": "3b877542df5650bb0118177dcf1c35d9",
+    "manifests/ospfd.pp": "118ab6dd11b1b05e0b588a3e96d52806",
+    "manifests/params.pp": "59ae233fb323590c8eeae1f283301904",
+    "manifests/ripd.pp": "9e4a2355bdcdb4bf845753321441000b",
+    "manifests/ripngd.pp": "6d901088f64ff7fe38c06431d2dfda43",
+    "manifests/zebra.pp": "57f652be2375e4fa09d847f539db5323",
+    "spec/spec_helper.rb": "a55d1e6483344f8ec6963fcb2c220372",
+    "templates/bgpd.conf.erb": "6c4cdd52d5387b6310001c6bdb70760e",
+    "templates/daemons.erb": "2a8689b080ef0ebcb7619ca00cae6d38",
+    "templates/debian.conf.erb": "01c6715f659b52a9807c4b51fbe89268",
+    "templates/isisd.conf.erb": "d41d8cd98f00b204e9800998ecf8427e",
+    "templates/ospf6d.conf.erb": "d41d8cd98f00b204e9800998ecf8427e",
+    "templates/ospfd.conf.erb": "34b48748b49d0e1f7ddf5208e965e3c5",
+    "templates/ripd.conf.erb": "d41d8cd98f00b204e9800998ecf8427e",
+    "templates/ripngd.conf.erb": "d41d8cd98f00b204e9800998ecf8427e",
+    "templates/vtysh.conf.erb": "c505db4e30f196ffb0ba8a685cc002ac",
+    "templates/zebra.conf.erb": "453e08a6011f032c53740682e72a0e3f",
+    "tests/init.pp": "76d2b86fbbfbeb0487b31bc17cbaeb56"
+  }
+}
