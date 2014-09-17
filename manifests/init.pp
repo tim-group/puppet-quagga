@@ -70,6 +70,14 @@ class quagga (
     notify  => Service['quagga'],
   }
 
+  file { '/etc/quagga/debian.conf':
+    mode    => '0644',
+    owner   => 'root',
+    group   => 'root',
+    content => template('quagga/debian.conf.erb'),
+    notify  => Service['quagga'],
+  }
+
   if $zebra == true {
     include quagga::zebra
   }

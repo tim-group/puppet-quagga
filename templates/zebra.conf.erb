@@ -4,5 +4,5 @@
 
 hostname <%= @hostname %>
 password <%= @password %>
-enable password <%= @enable_password %>
-log file <%= @log_file %>
+enable password <%= @enable %>
+<% if @zebra_logfile%>log file <%= @zebra_logfile %><% else %>log syslog<% end -%>
