@@ -6,5 +6,6 @@ class quagga::zebra {
       group   => 'quagga',
       content => template('quagga/zebra.conf.erb'),
       notify  => Service['quagga'],
+      require => Package['quagga'],
     }
 }

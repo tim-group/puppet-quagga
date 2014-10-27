@@ -8,5 +8,6 @@ class quagga::ripngd {
       group   => 'quagga',
       content => template('quagga/ripngd.conf.erb'),
       notify  => Service['quagga'],
+      require => Package['quagga']
     }
 }

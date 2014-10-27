@@ -8,5 +8,6 @@ class quagga::bgpd {
       group   => 'quagga',
       content => template('quagga/bgpd.conf.erb'),
       notify  => Service['quagga'],
+      require => Package['quagga'],
     }
 }

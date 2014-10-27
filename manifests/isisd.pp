@@ -8,5 +8,6 @@ class quagga::isisd {
       group   => 'quagga',
       content => template('quagga/isisd.conf.erb'),
       notify  => Service['quagga'],
+      require => Package['quagga']
     }
 }

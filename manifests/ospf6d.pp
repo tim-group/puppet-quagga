@@ -8,5 +8,6 @@ class quagga::ospf6d {
       group   => 'quagga',
       content => template('quagga/ospf6d.conf.erb'),
       notify  => Service['quagga'],
+      require => Package['quagga']
     }
 }

@@ -25,6 +25,7 @@ class quagga (
   $hostname = $::quagga::params::hostname,
   $password = $::quagga::params::password,
   $enable = $::quagga::params::enable,
+  $password_encryption = $::quagga::params::password_encryption,
   $network = $::quagga::params::network,
   $router_id = $::quagga::params::router_id,
   $bgp_logfile = $::quagga::params::bgp_logfile,
@@ -36,8 +37,13 @@ class quagga (
   $ripd = $::quagga::params::rip,
   $ripngd = $::quagga::params::ripngd,
   $bgp_neighbors = $::quagga::params::bgp_neighbors,
+  $ipv6_network = $::quagga::params::ipv6_network,
+  $ipv6_bgp_neighbors = $::quagga::params::ipv6_neighbors,
   $ip_prefix_list = $::quagga::params::ip_prefix_list,
+  $ipv6_prefix_list = $::quagga::params::ipv6_prefix_list,
   $route_map = $::quagga::params::route_map,
+  $zebra_logfile = $::quagga::params::zebra_logfile,
+  $zebra_interfaces = $::quagga::params::zebra_interfaces,
 )
 {
   include quagga::params
@@ -60,6 +66,7 @@ class quagga (
     group   => 'quagga',
     content => template('quagga/daemons.erb'),
     notify  => Service['quagga'],
+    require => Package['quagga'],
   }
 
   file { '/etc/quagga/vtysh.conf':
@@ -68,6 +75,7 @@ class quagga (
     group   => 'quagga',
     content => template('quagga/vtysh.conf.erb'),
     notify  => Service['quagga'],
+    require => Package['quagga'],
   }
 
   file { '/etc/quagga/debian.conf':
@@ -76,6 +84,7 @@ class quagga (
     group   => 'root',
     content => template('quagga/debian.conf.erb'),
     notify  => Service['quagga'],
+    require => Package['quagga'],
   }
 
   if $zebra == true {
