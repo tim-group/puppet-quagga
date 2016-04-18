@@ -1,6 +1,6 @@
 #Class quagga::bgpd
 
-class quagga::bgpd {
+class quagga::bgpd inherits quagga {
 
     file { '/etc/quagga/bgpd.conf':
       mode    => '0644',

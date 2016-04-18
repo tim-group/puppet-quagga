@@ -1,6 +1,6 @@
 #Class quagga::isisd
 
-class quagga::isisd {
+class quagga::isisd inherits quagga {
 
     file { '/etc/quagga/isisd.conf':
       mode    => '0644',

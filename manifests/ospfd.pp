@@ -1,6 +1,6 @@
 #Class quagga::ospfd
 
-class quagga::ospfd {
+class quagga::ospfd inherits quagga {
 
     file { '/etc/quagga/ospfd.conf':
       mode    => '0644',

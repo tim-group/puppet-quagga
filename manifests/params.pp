@@ -7,6 +7,7 @@ if ! $router_id {
 }
 
   $bgp_alwayscomparemed = false
+  $bgp_neighbors = []
 # $bgp_logfile = '/var/log/quagga/bgpd.log'
 #  $ospf_logfile = '/var/log/quagga/ospfd.log'
   #$ospf_interfaces is an array in the format 

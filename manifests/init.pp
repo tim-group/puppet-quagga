@@ -26,7 +26,7 @@ class quagga (
   $password = $::quagga::params::password,
   $enable = $::quagga::params::enable,
   $password_encryption = $::quagga::params::password_encryption,
-  $network = $::quagga::params::network,
+  $ipv4_network = $::quagga::params::ipv4_network,
   $router_id = $::quagga::params::router_id,
   $bgp_logfile = $::quagga::params::bgp_logfile,
   $bgpd = $::quagga::params::bgpd,
@@ -44,9 +44,8 @@ class quagga (
   $route_map = $::quagga::params::route_map,
   $zebra_logfile = $::quagga::params::zebra_logfile,
   $zebra_interfaces = $::quagga::params::zebra_interfaces,
-)
+) inherits quagga::params
 {
-  include quagga::params
 
   package { 'quagga':
     ensure   => present,

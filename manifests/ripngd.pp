@@ -1,6 +1,6 @@
 #Class quagga::ripngd
 
-class quagga::ripngd {
+class quagga::ripngd inherits quagga {
 
     file { '/etc/quagga/ripngd.conf':
       mode    => '0644',

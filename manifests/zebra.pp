@@ -1,5 +1,5 @@
 #quagga::zebra
-class quagga::zebra {
+class quagga::zebra inherits quagga {
     file { '/etc/quagga/zebra.conf':
       mode    => '0644',
       owner   => 'quagga',

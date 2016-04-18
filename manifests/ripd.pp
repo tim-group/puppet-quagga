@@ -1,6 +1,6 @@
 #Class quagga::ripd
 
-class quagga::ripd {
+class quagga::ripd inherits quagga {
 
     file { '/etc/quagga/ripd.conf':
       mode    => '0644',
