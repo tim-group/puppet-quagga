@@ -27,6 +27,8 @@ class quagga::params {
   $route_map = undef
   $zebra_logfile = undef
   $zebra_interfaces = undef
+  $service_enable = true
+  $service_ensure = running
 
 #  $ospf_logfile = '/var/log/quagga/ospfd.log'
   #$ospf_interfaces is an array in the format 

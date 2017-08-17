@@ -46,6 +46,8 @@ class quagga (
   $route_map = $::quagga::params::route_map,
   $zebra_logfile = $::quagga::params::zebra_logfile,
   $zebra_interfaces = $::quagga::params::zebra_interfaces,
+  $service_enable = $::quagga::params::service_enable,
+  $service_ensure = $::quagga::params::service_ensure,
 ) inherits quagga::params
 {
 
@@ -55,10 +57,10 @@ class quagga (
   }
 
   service { 'quagga':
-    ensure      => running,
+    ensure      => $service_ensure,
     hasrestart  => true,
     hasstatus   => false,
-    enable      => true,
+    enable      => $service_enable,
   }
 
   file { '/etc/quagga/daemons':
