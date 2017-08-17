@@ -57,7 +57,10 @@ class quagga (
   }
 
   service { 'quagga':
-    ensure      => $service_ensure,
+    ensure      => $service_ensure ? {
+      'UNDEF' => undef,
+      default => $service_ensure,
+    },
     hasrestart  => true,
     hasstatus   => false,
     enable      => $service_enable,
