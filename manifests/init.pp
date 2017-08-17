@@ -36,6 +36,8 @@ class quagga (
   $ospf6d = $::quagga::params::ospf6d,
   $ripd = $::quagga::params::rip,
   $ripngd = $::quagga::params::ripngd,
+  $babeld = $::quagga::params::babeld,
+  $bgp_alwyscomparemed = $::quagga::params::bgp_alwayscomparemed,
   $bgp_neighbors = $::quagga::params::bgp_neighbors,
   $ipv6_network = $::quagga::params::ipv6_network,
   $ipv6_bgp_neighbors = $::quagga::params::ipv6_neighbors,

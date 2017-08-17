@@ -14,7 +14,7 @@ service password-encryption
 !
 router bgp <%= @asn %>
  bgp router-id <%= @router_id %>
-<% if scope.lookupvar('quagga::params::bgp_comparemed') %>  bgp always-compare-med <% end -%>
+<% if @bgp_alwayscomparemed %> bgp always-compare-med <% end -%>
 <% @ipv4_network.each do |value| -%>
  network <%= value %>
 <% end -%>!
