@@ -44,6 +44,7 @@ class quagga (
   $ip_prefix_list = $::quagga::params::ip_prefix_list,
   $ipv6_prefix_list = $::quagga::params::ipv6_prefix_list,
   $route_map = $::quagga::params::route_map,
+  $watch_quagga = $::quagga::params::watch_quagga,
   $zebra_logfile = $::quagga::params::zebra_logfile,
   $zebra_interfaces = $::quagga::params::zebra_interfaces,
   $service_enable = $::quagga::params::service_enable,
