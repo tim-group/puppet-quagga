@@ -50,8 +50,8 @@ router bgp <%= @asn %>
  <%- if value['update_source'] -%>
  neighbor <%= value['neighbor_ip'] %> update-source <%= value['update_source'] %>
  <%- end -%>
-<% end %>
-<% if @ipv6_network %>
+<% end -%>
+<% if @ipv6_network -%>
 !
  address-family ipv6
  <%- @ipv6_network.each do |value| -%>
