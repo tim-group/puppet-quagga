@@ -5,10 +5,12 @@
 hostname <%= @hostname %>
 password <%= @password %>
 enable password <%= @enable %>
-<% if @bgp_logfile%>log file <%= @bgp_logfile %><% else %>
+<% if @bgp_logfile -%>
+log file <%= @bgp_logfile %>
+<% else -%>
 log syslog
 <% end -%>
-<% if @password_encryption %>
+<% if @password_encryption -%>
 service password-encryption
 <% end -%>
 !
