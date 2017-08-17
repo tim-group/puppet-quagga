@@ -4,9 +4,7 @@
 !
 hostname <%= @hostname %>
 password <%= @password %>
-<% if @enable -%>
 enable password <%= @enable %>
-<% end -%>
 <% if @bgp_logfile%>log file <%= @bgp_logfile %><% else %>
 log syslog
 <% end -%>
