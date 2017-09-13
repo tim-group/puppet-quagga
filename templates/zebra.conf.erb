@@ -5,27 +5,28 @@
 hostname <%= @hostname %>
 password <%= @password %>
 enable password <%= @enable %>
-<% if @zebra_logfile%>log file <%= @zebra_logfile %>
-<% else %>log syslog
+<% if @zebra_logfile -%>
+log file <%= @zebra_logfile %>
+<% else -%>
+log syslog
 <% end -%>
 !
-<% if @zebra_interfaces %><% @zebra_interfaces.each do |key,value| -%>
+<% if @zebra_interfaces -%>
+ <%- @zebra_interfaces.each do |key,value| -%>
 interface <%= key %>
-<% if value['ipv6_suppress_ra'] -%>
+  <%- if value['ipv6_suppress_ra'] -%>
  ipv6 nd suppress-ra 
-<% end -%>
-<% if value['ipv4_address'] -%><% value['ipv4_address'].each do |address| -%>
+  <%- end -%>
+  <%- if value['ipv4_address'] -%><% value['ipv4_address'].each do |address| -%>
  ip address <%= address -%>
 
-<% end -%>
-<% if value['ipv6_address'] -%><% value['ipv6_address'].each do |address| -%>
+  <%- end -%>
+  <%- if value['ipv6_address'] -%><% value['ipv6_address'].each do |address| -%>
  ipv6 address <%= address -%>
 
-<% end -%>
-<% end -%>
-<% end -%>
+  <%- end -%>
 !
-<% end -%>
+ <%- end -%>
 <% end -%>
 line vty
 !
