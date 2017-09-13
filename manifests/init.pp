@@ -43,6 +43,7 @@ class quagga (
   $ipv6_bgp_neighbors = $::quagga::params::ipv6_neighbors,
   $ip_prefix_list = $::quagga::params::ip_prefix_list,
   $ipv6_prefix_list = $::quagga::params::ipv6_prefix_list,
+  $ipv4_routes = $::quagga::params::ipv4_routes,
   $route_map = $::quagga::params::route_map,
   $watch_quagga = $::quagga::params::watch_quagga,
   $zebra_logfile = $::quagga::params::zebra_logfile,
