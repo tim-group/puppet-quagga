@@ -24,6 +24,7 @@ class quagga::params {
   $ipv6_neighbors = undef
   $ip_prefix_list = undef
   $ipv6_prefix_list = undef
+  $ipv4_routes = undef
   $route_map = undef
   $watch_quagga = false
   $zebra_logfile = undef

@@ -28,5 +28,11 @@ interface <%= key %>
 !
  <%- end -%>
 <% end -%>
+<% if @ipv4_routes -%>
+ <%- @ipv4_routes.each do |route| -%>
+ip route <%= route %>
+ <%- end -%>
+!
+<% end -%>
 line vty
 !
