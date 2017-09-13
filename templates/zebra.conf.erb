@@ -17,13 +17,17 @@ interface <%= key %>
   <%- if value['ipv6_suppress_ra'] -%>
  ipv6 nd suppress-ra 
   <%- end -%>
-  <%- if value['ipv4_address'] -%><% value['ipv4_address'].each do |address| -%>
+  <%- if value['ipv4_address'] -%>
+   <% value['ipv4_address'].each do |address| -%>
  ip address <%= address -%>
 
+   <%- end -%>
   <%- end -%>
-  <%- if value['ipv6_address'] -%><% value['ipv6_address'].each do |address| -%>
+  <%- if value['ipv6_address'] -%>
+   <% value['ipv6_address'].each do |address| -%>
  ipv6 address <%= address -%>
 
+   <%- end -%>
   <%- end -%>
 !
  <%- end -%>
