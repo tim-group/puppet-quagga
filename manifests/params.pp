@@ -15,6 +15,11 @@ class quagga::params {
   $isisd = undef
   $ospfd = undef
   $ospf6d = undef
+  $ospf_areas = {}
+  $ospf_interfaces = undef
+  $ospf_logfile = undef
+  $ospf_log_adjacency_changes = undef
+  $ospf_redistributes = []
   $rip = undef
   $ripngd = undef
   $babeld = undef

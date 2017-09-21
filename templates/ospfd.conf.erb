@@ -1,17 +1,37 @@
 hostname <%= @hostname %>
-password <%= scope.lookupvar('quagga::params:password') %>
-log file <%= scope.lookupvar('quagga::params::bgp_logfile') %>
+password <%= @password %>
+<% if @ospf_logfile -%>
+log file <%= @ospf_logfile %>
 log timestamp precision 6
+<% else -%>
+log syslog
+<% end -%>
 !
-<% ospf_interfaces.each do |key,value| -%>
-  interface <%= value['interface'] %>
-    ip ospf area <%= value['area'] %>
+<% if @ospf_interfaces -%>
+ <%- @ospf_interfaces.each do |key,value| -%>
+interface <%= value['interface'] %>
+  ip ospf area <%= value['area'] %>
 !
-<%  end -%>
+ <%-  end -%>
 !
+<% end -%>
 router ospf
-  ospf router-id <%= scope.lookupvar('quagga::params::router_id') %>
-  log-adjacency-changes detail
+  ospf router-id <%= @router_id %>
+<% if @ospf_redistributes -%>
+ <%- @ospf_redistributes.each do |redistribute| -%>
+  redistribute <%= redistribute %>
+ <%- end -%>
+<% end -%>
+<% if @ospf_areas -%>
+ <%- @ospf_areas.each do |area, networks| -%>
+  <%- @networks.each do |network| -%>
+  network <%= network %> area <%= area %>
+  <%- end -%>
+ <%- end -%>
+<% end -%>
+<% if @log_adjacency_changes -%>
+  log-adjacency-changes <%= log_adjacency_changes %>
+<% end -%>
 !
 line vty
 !
