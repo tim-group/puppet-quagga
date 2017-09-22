@@ -24,7 +24,7 @@ router ospf
 <% end -%>
 <% if @ospf_areas -%>
  <%- @ospf_areas.each do |area, networks| -%>
-  <%- @networks.each do |network| -%>
+  <%- networks.each do |network| -%>
   network <%= network %> area <%= area %>
   <%- end -%>
  <%- end -%>
