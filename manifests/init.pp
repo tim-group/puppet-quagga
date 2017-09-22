@@ -37,7 +37,7 @@ class quagga (
   $ospf_areas = $::quagga::params::ospf_areas,
   $ospf_interfaces = $::quagga::params::ospf_interfaces,
   $ospf_logfile = $::quagga::params::ospf_logfile,
-  $ospf_log_adjacency_changes = $::quagga::params::opsf_log_adjacency_changes,
+  $ospf_log_adjacency_changes = $::quagga::params::ospf_log_adjacency_changes,
   $ospf_redistributes = $::quagga::params::ospf_redistributes,
   $ripd = $::quagga::params::rip,
   $ripngd = $::quagga::params::ripngd,
