@@ -3,6 +3,14 @@ password <%= @password %>
 <% if @ospf_logfile -%>
 log file <%= @ospf_logfile %>
 log timestamp precision 6
+ <% if $ospf_debug_logging %>
+!
+debug ospf ism
+debug ospf nsm
+debug ospf lsa
+debug ospf zebra
+debug ospf event
+ <% end %>
 <% else -%>
 log syslog
 <% end -%>

@@ -16,6 +16,7 @@ class quagga::params {
   $ospfd = undef
   $ospf6d = undef
   $ospf_areas = {}
+  $ospf_debug_logging = false
   $ospf_interfaces = undef
   $ospf_logfile = undef
   $ospf_log_adjacency_changes = undef

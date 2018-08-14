@@ -35,6 +35,7 @@ class quagga (
   $ospfd = $::quagga::params::ospfd,
   $ospf6d = $::quagga::params::ospf6d,
   $ospf_areas = $::quagga::params::ospf_areas,
+  $ospf_debug_logging = $::quagga::params::ospf_debug_logging,
   $ospf_interfaces = $::quagga::params::ospf_interfaces,
   $ospf_logfile = $::quagga::params::ospf_logfile,
   $ospf_log_adjacency_changes = $::quagga::params::ospf_log_adjacency_changes,
